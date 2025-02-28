@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research Question Answer</title>
+    <style>
+        body {
+            background-color: #1c1c1c;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 60%;
+            margin: auto;
+            padding: 20px;
+            background-color: #2f2f2f;
+            border-radius: 8px;
+        }
+        h1 {
+            color: #2196F3;
+            text-align: center;
+        }
+        .answer-container {
+            margin-top: 20px;
+        }
+        .answer {
+            background-color: #444444;
+            padding: 15px;
+            border-radius: 4px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+        .citations {
+            font-size: 14px;
+            margin-top: 20px;
+        }
+        .references {
+            font-size: 14px;
+            margin-top: 20px;
+        }
+        a {
+            color: #2196F3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Answer to Your Research Question</h1>
+        <p><strong>Research Question:</strong> {{ question }}</p>
+
+        <h2>BART Answer:</h2>
+        <div class="answer">{{ bart_answer }}</div>
+        <div class="citations">{{ bart_citations }}</div>
+        <div class="references">
+            <h3>References:</h3>
+            <ul>
+                {% for ref in bart_references %}
+                <li>{{ ref }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <h2>GPT-2 Answer:</h2>
+        <div class="answer">{{ gpt2_answer }}</div>
+        <div class="citations">{{ gpt2_citations }}</div>
+        <div class="references">
+            <h3>References:</h3>
+            <ul>
+                {% for ref in gpt2_references %}
+                <li>{{ ref }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <h2>GPT-Neo Answer:</h2>
+        <div class="answer">{{ gpt_neo_answer }}</div>
+        <div class="citations">{{ gpt_neo_citations }}</div>
+        <div class="references">
+            <h3>References:</h3>
+            <ul>
+                {% for ref in gpt_neo_references %}
+                <li>{{ ref }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <br>
+        <p><a href="/">Go back</a></p>
+    </div>
+</body>
+</html>
